@@ -10,6 +10,6 @@
 #		if ($RG.Tags['Description'] -ne $_.Description) { $RG.Tags.Description = $_.Description; $RG | Set-AzureRMResourceGroup }
 #	}	
 #}
-"Hello World"
+"Hello World v2"
 Get-AzureRMVM
 
