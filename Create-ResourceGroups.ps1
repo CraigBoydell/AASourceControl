@@ -12,6 +12,6 @@
 #}
 "Hello World v2"
 $VMs = Get-AzureRmVM
-$VMs
+$VMs[0].name
 get-AzureRmSubscription
 
