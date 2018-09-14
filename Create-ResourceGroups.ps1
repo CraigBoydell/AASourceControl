@@ -12,4 +12,5 @@
 #}
 "Hello World v2"
 Get-AzureRMVM
+get-AzureRmSubscription
 
