@@ -11,4 +11,5 @@
 #	}	
 #}
 "Hello World"
+Get-AzureRMVM
 
