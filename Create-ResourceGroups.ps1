@@ -11,6 +11,7 @@
 #	}	
 #}
 "Hello World v2"
-Get-AzureRMVM
+$VMs = Get-AzureRmVM
+$VMs
 get-AzureRmSubscription
 
