@@ -1,0 +1,7 @@
+Name,Location,Description
+AU-QRM-NonProd-RG-01,australiaeast,Networks
+AU-QRM-NonProd-RG-02,australiaeast,Network Security
+AU-QRM-NonProd-RG-03,australiaeast,Application Servers
+AU-QRM-NonProd-RG-04,australiaeast,HPC Servers
+AU-QRM-NonProd-RG-05,australiaeast,Database Servers
+AU-QRM-NonProd-RG-06,australiaeast,Domain Controller Servers
