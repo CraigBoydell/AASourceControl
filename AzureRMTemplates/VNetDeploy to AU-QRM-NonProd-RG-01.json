@@ -1,0 +1,60 @@
+{
+
+"$schema":"http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+"contentVersion":"1.0.0.0",
+"parameters":{
+
+    "VNetSettings":{
+        "type":"object",
+        "defaultValue":{
+            "name":"SG-HomeLab-SCOM-VNet-01", 
+            "addressPrefixes": {
+                "defaultValue":["10.1.1.0/24"]
+            },
+            "subnets":[
+                {
+                    "name":"AU-QRM-NonProd-Subnet-01",
+                    "addressPrefix":"10.1.1.0/24",
+                    "Description":"SCOM HomeLab Subnet"
+                }
+            ]
+        }
+    }
+},
+"resources": [
+    {
+        "apiVersion":"2017-06-01",
+        "type":"Microsoft.Network/virtualNetworks",
+        "name":"[parameters('VNetSettings').name]",
+        "location":"[resourceGroup().location]",
+        "properties": {
+            "addressSpace":{
+                "addressPrefixes":"[parameters('VNetSettings').addressPrefixes.defaultValue]"
+            },
+            "dhcpOptions": {
+                "dnsServers": [
+                   "10.1.1.20"
+                   ]
+            },            
+            "copy":[{
+                "name":"subnets",
+                "count":"[length(parameters('VNetSettings').subnets)]",
+                "input": {
+                    "name":"[parameters('VNetSettings').subnets[copyIndex('subnets')].name]",
+                    "properties": {                       
+                        "addressPrefix":"[parameters('VNetSettings').subnets[copyIndex('subnets')].addressPrefix]",
+                        "networkSecurityGroup": {
+                            "id": "[resourceId('SG-HomeLab-SCOM-RG-02','Microsoft.Network/networkSecurityGroups', concat(parameters('VNetSettings').subnets[copyIndex('subnets')].name,'-NSG'))]"
+                        }
+                    }
+                }
+            }]
+        }            
+    }
+],
+
+"outputs": {  }
+
+}
+
+
