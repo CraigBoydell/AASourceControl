@@ -1,4 +1,6 @@
 #$CMDB = import-csv '\\fs0001nsg\users$\folderredirection\cboydell\Documents\INGDirect\88. Azure QRM\CMDB-ResourceGroups.csv'
+$CMDB = import-csv 'CMDB-ResourceGroups.csv
+$CMDB
 #$i = 0
 #$CMDB | foreach {
 #	$i++
