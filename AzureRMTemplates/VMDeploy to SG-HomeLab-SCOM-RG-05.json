@@ -77,6 +77,28 @@
           ]
         }
       }
+    },
+    {
+        "apiVersion": "2015-06-15",
+        "type": "Microsoft.Compute/virtualMachines/extensions",
+        "name": "[concat(parameters('VMSettings').VMs[copyIndex('LCMSetup')].name,'/LCMSetup')]",
+        "copy": { "name":"LCMSetup", "count": "[length(parameters('VMSettings').VMs)]" },
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/',parameters('VMSettings').VMs[copyIndex('LCMSetup')].name)]"
+        ],
+        "properties": {
+                "publisher": "Microsoft.Compute",
+                "type": "CustomScriptExtension",
+                "typeHandlerVersion": "1.9",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                   "fileUris": [
+                       "http://10.1.0.4/DSCWeb/DSC_LCMSetup.ps1"
+                   ],
+                   "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File DSC_LCMSetup.ps1"
+                }
+        }
     }
   ]
 }
