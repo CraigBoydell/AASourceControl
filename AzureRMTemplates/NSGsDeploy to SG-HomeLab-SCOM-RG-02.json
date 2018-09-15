@@ -1,0 +1,30 @@
+{
+    "$schema":"http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion":"1.0.0.0",
+    "parameters":{
+        "NSGSettings":{
+            "type":"object",
+            "defaultValue":{
+                "NSGs":[
+                    {
+                        "name":"SG-HomeLab-SCOM-Subnet-01-NSG",
+                        "Description":"SCOM Homelab NSG"
+                    }
+                ]
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2018-02-01",
+            "copy": { "name":"NSGs", "count": "[length(parameters('NSGSettings').NSGs)]" },
+            "name":"[parameters('NSGSettings').NSGs[copyIndex('NSGs')].name]",
+            "location": "southeastasia",
+            "tags": {
+                "Description": "[parameters('NSGSettings').NSGs[copyIndex('NSGs')].Description]"
+            }
+        }
+    ],
+    "outputs": {  }
+}
