@@ -13,7 +13,7 @@
             },
             "subnets":[
                 {
-                    "name":"AU-QRM-NonProd-Subnet-01",
+                    "name":"SG-HomeLab-SCOM-Subnet-01",
                     "addressPrefix":"10.1.1.0/24",
                     "Description":"SCOM HomeLab Subnet"
                 }
