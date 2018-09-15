@@ -10,7 +10,7 @@
               "VMs":[
                   {
                       "name":"DC01",
-                      "size":"Standard_D2_v2"
+                      "size":"Standard_B2s"
                   }
               ]
           }
