@@ -17,7 +17,7 @@
         }
     },
   "variables": {
-    "vnetID": "[resourceId('SG-HomeLab-SCOM-VNet-01')]", 
+    "vnetID": "[resourceId('SG-HomeLab-SCOM-RG-01','Microsoft.Network/virtualNetworks','SG-HomeLab-SCOM-VNet-01')]", 
     "subnetRef": "[concat(variables('vnetID'),'/subnets/SG-HomeLab-SCOM-Subnet-01')]" 
   },
   "resources": [
