@@ -1,7 +1,6 @@
 Name,Location,Description
-AU-QRM-NonProd-RG-01,australiaeast,Networks
-AU-QRM-NonProd-RG-02,australiaeast,Network Security
-AU-QRM-NonProd-RG-03,australiaeast,Application Servers
-AU-QRM-NonProd-RG-04,australiaeast,HPC Servers
-AU-QRM-NonProd-RG-05,australiaeast,Database Servers
-AU-QRM-NonProd-RG-06,australiaeast,Domain Controller Servers
+SG-HomeLab-SCOM-RG-01,southeastasia,Networks
+SG-HomeLab-SCOM-RG-02,southeastasia,Network Security
+SG-HomeLab-SCOM-RG-03,southeastasia,Application Servers
+SG-HomeLab-SCOM-RG-04,southeastasia,Database Servers
+SG-HomeLab-SCOM-RG-05,southeastasia,Domain Controller Servers
