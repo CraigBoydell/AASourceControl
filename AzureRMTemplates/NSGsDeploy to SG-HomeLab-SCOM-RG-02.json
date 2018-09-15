@@ -20,7 +20,7 @@
             "apiVersion": "2018-02-01",
             "copy": { "name":"NSGs", "count": "[length(parameters('NSGSettings').NSGs)]" },
             "name":"[parameters('NSGSettings').NSGs[copyIndex('NSGs')].name]",
-            "location": "southeastasia",
+            "location": "[resourceGroup().location]",
             "tags": {
                 "Description": "[parameters('NSGSettings').NSGs[copyIndex('NSGs')].Description]"
             }
