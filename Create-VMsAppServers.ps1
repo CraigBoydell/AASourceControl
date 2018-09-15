@@ -1,0 +1,1 @@
+New-AzureRmResourceGroupDeployment -ResourceGroupName SG-HomeLab-SCOM-RG-03 -TemplateFile $($PSScriptRoot + '\AzureRMTemplates\VMDeploy to SG-HomeLab-SCOM-RG-03.json') -DeploymentName VMDeployAppServers
