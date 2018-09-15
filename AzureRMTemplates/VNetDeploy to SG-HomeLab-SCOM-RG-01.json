@@ -46,7 +46,26 @@
                         }
                     }
                 }
-            }]
+            }],
+            "virtualNetworkPeerings": [
+                    {
+                        "name": "SG-HomeLab-SCOM-Peer-MGMT",
+                        "properties": {
+                            "remoteVirtualNetwork": {
+                                "id": "[resourceId('SG-HomeLab-MGMT-RG-01','Microsoft.Network/virtualNetworks','SG-HomeLab-MGMT-VNet-01')]"
+                            },
+                            "allowVirtualNetworkAccess": true,
+                            "allowForwardedTraffic": false,
+                            "allowGatewayTransit": false,
+                            "useRemoteGateways": false,
+                            "remoteAddressSpace": {
+                                "addressPrefixes": [
+                                    "10.1.0.0/24"
+                                ]
+                            }
+                        }
+                    }
+            ]
         }            
     }
 ],
