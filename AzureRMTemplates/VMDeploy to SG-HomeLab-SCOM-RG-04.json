@@ -15,6 +15,10 @@
                   {
                       "name":"SQL02",
                       "size":"Standard_B2s"
+                  },
+                  }
+                      "name":"SQL03",
+                      "size":"Standard_B2s"
                   }
               ]
           }
