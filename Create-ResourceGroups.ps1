@@ -1,4 +1,3 @@
-#$CMDB = import-csv '\\fs0001nsg\users$\folderredirection\cboydell\Documents\INGDirect\88. Azure QRM\CMDB-ResourceGroups.csv'
 $CMDB = import-csv $($PSScriptRoot + '\CMDB-ResourceGroups.csv')
 #$i = 0
 $CMDB | foreach {
